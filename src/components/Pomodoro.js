@@ -4,9 +4,8 @@ function Pomodoro() {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
-  const [start, setStart] = useState(false);
-  const [reset, setReset] = useState(false);
-  const [pause, setPause] = useState(false);
+  const [start, setStart] = useState(false);  
+  
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
@@ -43,7 +42,7 @@ function Pomodoro() {
         };
       }
     }, 1000);
-  }, [seconds, start, pause]);
+  }, [seconds, start, minutes, displayMessage]);
 
 const handleResetClick = () => {
     setMinutes(25);
