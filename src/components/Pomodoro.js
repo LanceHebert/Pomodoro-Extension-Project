@@ -43,7 +43,14 @@ function Pomodoro() {
         };
       }
     }, 1000);
-  }, [seconds,start,pause]);
+  }, [seconds, start, pause]);
+
+const handleResetClick = () => {
+    setMinutes(25);
+    setSeconds(0)
+}
+
+
 
   return (
     <div>
@@ -54,10 +61,10 @@ function Pomodoro() {
       <div className="timer">
         {timerMinutes}:{timerSeconds}
       </div>
-      <button type="button" onClick={()=>setStart(!start)} className="btn">
+      <button type="button" onClick={() => setStart(!start)} className="btn">
         {start === true ? "Stop" : "Start"}
-      </button>     
-      <button type="button"  className="btn">
+      </button>
+      <button type="button" onClick={handleResetClick} className="btn">
         Reset
       </button>
     </div>
